@@ -21,11 +21,12 @@ namespace CarDealership.Models
         public bool CarIsDriverless { get; set; }
 
 
-        private static List<Car> _myCarsInstances = new List<Car>(){};
-        
         public string CarColor { get; set; }
 
         public int Id { get; }
+        
+        private static List<Car> _myCarsInstances = new List<Car>(){};
+        
         
         
         
