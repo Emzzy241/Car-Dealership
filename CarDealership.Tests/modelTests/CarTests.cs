@@ -47,16 +47,34 @@ namespace CarDealership.Tests
             Assert.AreEqual(newCarModel, myCar.CarModel);
         }
 
-        // [TestMethod]
-        // public void GetCarEngineType_ReturnsCarEngineType_String()
-        // {
-        //     // Arrange
-        //     Car myCar = new Car("a", "b", "c", true, "e");
-        //     string expectedCarModel = "Toyota Camry";
+        [TestMethod]
+        public void GetCarEngineType_ReturnsCarEngineType_String()
+        {
+            // Arrange
+            Car myCar = new Car("Toyota Camry", "b", "c", true, "e");
+            string expectedCarModel = "Toyota Camry";
 
-        //     // Act
+            // Act
+            string returnedCarModel = myCar.CarModel;
 
-        // }
+            // Assert
+            Assert.AreEqual(expectedCarModel, returnedCarModel);
+
+        }
+
+        [TestMethod]
+        public void GetCarSecuritySystem_SetsSecuritySystemOfCar_Void()
+        {
+            // Arrange
+            Car myCar = new Car("a", "b", "c", true, "e");
+            string setCarEngineType = "Toyota Camry";
+
+            // Act
+            myCar.CarSecuritySystem = setCarEngineType;
+
+            // Assert
+            Assert.AreEqual(setCarEngineType, myCar.CarSecuritySystem);
+        }
 
 
 
