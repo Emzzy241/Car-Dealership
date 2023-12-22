@@ -15,7 +15,7 @@ namespace CarDealership.Controllers
         }
 
         [HttpGet("cars/new")]
-        public ActionResult CreateForm()
+        public ActionResult New()
         {
             return View();
         }
@@ -27,6 +27,14 @@ namespace CarDealership.Controllers
             Car myCar = new Car(newCarModel, newCarEngineType, newCarSecuritySystem, newCarIsDriverless, newCarColor);
             return RedirectToAction("Index");
         }
+       
+        [HttpGet("/cars/{id}")]
+        public ActionResult Show(int id)
+        {
+            Car foundCar = Car.FindCar(id);
+            return View(foundCar);
+        }
+
         
         [HttpGet("/cars/delete")]
         public ActionResult Delete()

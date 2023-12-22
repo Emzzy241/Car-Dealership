@@ -26,7 +26,7 @@ namespace CarDealership.Models
         public int Id { get; }
         
         private static List<Car> _myCarsInstances = new List<Car>(){};
-        
+            
         
         
         
