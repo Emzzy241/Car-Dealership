@@ -1,13 +1,14 @@
 # Car Dealership 1.0.0
 #### made by Mojiboye Emmanuel
 
-#### A Car Dealership application made with ASP.NET6.
+#### A Car Dealership application made with ASP.NET6.0
 
 ## Technologies Used
 * Git
 * C#
 * .NET6.0 Framework
 * MS Test
+* RESTful routing
 
 ## Description
 _Add in different cars, with their unique attributes. And get a list of the cars you have created._
