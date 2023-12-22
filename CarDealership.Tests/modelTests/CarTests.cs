@@ -8,8 +8,12 @@ using System.Collections.Generic;
 namespace CarDealership.Tests
 {
     [TestClass]
-    public class CarTests
+    public class CarTests : IDisposable
     {
+        public void Dispose()
+        {
+            Car.RemoveAllCars();
+        }
         // First Test: Testing for Creating Instance of car class
         [TestMethod]
         public void CarConstructor_CreatesInstanceOfCar_Car()
@@ -96,7 +100,7 @@ namespace CarDealership.Tests
             Assert.AreEqual(expectedCarSecuritySystem, returnedCarSecuritySystem);
         }
 
-        // Seventh Test: Test to se my car's security system(an auto-implemented property)
+        // Seventh Test: Test to set my car's security system(an auto-implemented property)
         [TestMethod]
          public void SetCarSecuritySystem_SetsCarSecuritySystem_Void()
         {
@@ -111,6 +115,7 @@ namespace CarDealership.Tests
             Assert.AreEqual(setCarSecuritySystem, myCar.CarSecuritySystem);
         }
 
+        // Eight Test: Test to get my car's whether car is driverless or not(an auto-implemented property)
         [TestMethod]
         public void GetCarIsDriverless_GetsWhetherCarIsDriverless_Bool()
         {
@@ -125,6 +130,7 @@ namespace CarDealership.Tests
             Assert.AreEqual(expectedCarIsDriverless, returnedCarIsDriverless);
 
         }
+        // Ninth Test: Test to set my car to driverless(an auto-implemented property)
 
         [TestMethod]
          public void SetCarIsDriverless_SetsCarIsDriverless_Bool()
@@ -140,6 +146,64 @@ namespace CarDealership.Tests
             Assert.AreEqual(setCarIsDriverless, myCar.CarIsDriverless);
 
         }
+
+        // Tenth Test: Test to get my car's color(an auto-implemented property)
+        [TestMethod]
+        public void GetCarColor_GetsCarColor_String()
+        {
+            // Arrange
+            Car myCar = new Car("a", "b", "c", false, "purple");
+            string expectedCarColor = "purple";
+
+            // Act
+            string returnedCarColor = myCar.CarColor;
+
+            // Assert
+            Assert.AreEqual(expectedCarColor, returnedCarColor);
+
+        }
+
+        // Eleventh Test: Test to set my car's color(an auto-implemented property)
+         [TestMethod]
+         public void SetCarColor_SetsCarColor_String()
+        {
+            // Arrange
+            Car myCar = new Car("a", "b", "c", false, "purple");
+            string setCarColor = "green";
+
+            // Act
+            myCar.CarColor = setCarColor;
+
+            // Assert
+            Assert.AreEqual(setCarColor, myCar.CarColor);
+
+        }
+
+        // Twelfth Test: Testing my list of cars
+        [TestMethod]
+        public void GetAllCars_GetsAllInstancesOfCars_List()
+        {
+            // Arrange
+            Car myCar1 = new Car("Toyota Corolla", "ICE", "Alarm", false, "hotpink");
+            Car myCar2 = new Car("Toyota Camry", "ICE", "Alarm", false, "purple");
+            Car myCar3 = new Car("Tesla Model X", "Electric vehicle", "Immobilization", true, "red");
+            List<Car> expectedListOfCars = new List<Car>(){myCar1, myCar2, myCar3};
+
+            // Act
+            List<Car> returnedListOfCars = Car.GetAllCars();
+
+            // Assert
+            CollectionAssert.AreEqual(expectedListOfCars, returnedListOfCars);
+
+        }
+
+        // Thirteenth Test: Find different cars by their unique ID
+        [TestMethod]
+        public void FindCar_FindsCarWithUniqueId_Car()
+        {
+            // Arrange
+            
+        }  
 
 
 
