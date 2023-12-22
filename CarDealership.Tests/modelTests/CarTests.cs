@@ -199,10 +199,18 @@ namespace CarDealership.Tests
 
         // Thirteenth Test: Find different cars by their unique ID
         [TestMethod]
-        public void FindCar_FindsCarWithUniqueId_Car()
+        public void FindCar_ReturnsCarWithUniqueId_Car()
         {
             // Arrange
+            Car myCar = new Car("Toyota Camry", "ICE", "Alarm", false, "purple");
+            Car myCar2 = new Car("Tesla Model X", "Electric vehicle", "Immobilization", true, "red");
             
+            // Act
+            Car result = Car.FindCar(2);
+
+            // Assert
+            Assert.AreEqual(myCar2, result);
+
         }  
 
 
