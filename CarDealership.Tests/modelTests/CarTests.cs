@@ -111,21 +111,35 @@ namespace CarDealership.Tests
             Assert.AreEqual(setCarSecuritySystem, myCar.CarSecuritySystem);
         }
 
-        // [TestMethod]
-        // public void GetCarIsDriverless_GetsWhetherCarIsDriverless_Bool()
-        // {
-        //     // Arrange
-        //     Car myCar = new Car("a", "b", "c", false, "e");
-        //     bool expectedCarIsDriverless = false;
+        [TestMethod]
+        public void GetCarIsDriverless_GetsWhetherCarIsDriverless_Bool()
+        {
+            // Arrange
+            Car myCar = new Car("a", "b", "c", false, "e");
+            bool expectedCarIsDriverless = false;
 
-        //     // Act
-        //     bool returnedCarIsDriverless = myCar.CarIsDriverless;
+            // Act
+            bool returnedCarIsDriverless = myCar.CarIsDriverless;
 
-        //     // Assert
+            // Assert
+            Assert.AreEqual(expectedCarIsDriverless, returnedCarIsDriverless);
 
-            
-        // }
+        }
 
+        [TestMethod]
+         public void SetCarIsDriverless_SetsCarIsDriverless_Bool()
+        {
+            // Arrange
+            Car myCar = new Car("a", "b", "c", false, "e");
+            bool setCarIsDriverless = true;
+
+            // Act
+            myCar.CarIsDriverless = setCarIsDriverless;
+
+            // Assert
+            Assert.AreEqual(setCarIsDriverless, myCar.CarIsDriverless);
+
+        }
 
 
 
